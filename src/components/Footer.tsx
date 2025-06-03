@@ -18,7 +18,6 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
-              <img src={logoSinvest} alt="SINVEST Logo" className="w-10 h-5" />
               <span className="font-semibold text-lg">
                 Brasil Saúde SINVEST
               </span>
