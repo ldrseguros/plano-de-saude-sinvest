@@ -19,7 +19,7 @@ export const useAuth = () => {
   const authChecked = useRef(false);
   const authCheckFailed = useRef(false);
 
-  // Verificar se há token mock ou real e tentar carregar perfil de usuário ao iniciar
+  // Verificar se há token real e tentar carregar perfil de usuário ao iniciar
   useEffect(() => {
     const checkAuth = async () => {
       // Se já verificamos ou já falhou, não verificar novamente
@@ -28,29 +28,7 @@ export const useAuth = () => {
       }
 
       try {
-        // Primeiro verificar se há token mock
-        const mockToken = localStorage.getItem("mock_admin_token");
-        const mockUser = localStorage.getItem("mock_admin_user");
-
-        if (mockToken === "mock_authenticated" && mockUser) {
-          try {
-            const userData = JSON.parse(mockUser);
-            setAuthState({
-              isAuthenticated: true,
-              user: userData,
-              loading: false,
-              error: null,
-            });
-            authChecked.current = true;
-            return;
-          } catch (error) {
-            // Se não conseguir parsear o usuário mock, remover tokens mock
-            localStorage.removeItem("mock_admin_token");
-            localStorage.removeItem("mock_admin_user");
-          }
-        }
-
-        // Se não há token mock, verificar token real
+        // Verificar token real
         const token = authService.getToken();
 
         if (!token) {
@@ -179,10 +157,6 @@ export const useAuth = () => {
   const logout = () => {
     // Logout de token real
     authService.logout();
-
-    // Logout de token mock
-    localStorage.removeItem("mock_admin_token");
-    localStorage.removeItem("mock_admin_user");
 
     setAuthState({
       isAuthenticated: false,

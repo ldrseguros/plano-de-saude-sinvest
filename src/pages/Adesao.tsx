@@ -21,10 +21,12 @@ import {
   Home,
   Loader2,
   AlertCircle,
+  Edit3,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SignatureCanvas from "@/components/SignatureCanvas";
 import { useAdesao } from "@/hooks/useAdesao";
 import { usePdfGenerator } from "@/hooks/usePdfGenerator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -45,6 +47,8 @@ const Adesao = () => {
     error,
     userId,
     showUserExistsModal,
+    showSignaturePad,
+    signatureData,
     setEtapaAtual,
     setPlanoSelecionado,
     setOdontologico,
@@ -52,6 +56,9 @@ const Adesao = () => {
     setTermosAceitos,
     setInformacoesCorretas,
     setShowUserExistsModal,
+    setShowSignaturePad,
+    handleSignatureSave,
+    handleSignatureCancel,
     adicionarDependente,
     removerDependente,
     atualizarDependente,
@@ -221,6 +228,7 @@ const Adesao = () => {
       })),
       valorTotal: calcularValorTotal(),
       userId: userId || undefined,
+      signatureData: signatureData || undefined,
     };
 
     const result = await generatePDF(dadosParaPDF);
@@ -923,6 +931,57 @@ const Adesao = () => {
               colaborador de empresa filiada à SINVEST.
             </Label>
           </div>
+
+          {/* Seção de Assinatura Digital */}
+          {termosAceitos && informacoesCorretas && (
+            <div className="border-t pt-6 mt-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h4 className="text-lg font-bold text-blue-800 mb-4 flex items-center">
+                  <Edit3 className="w-5 h-5 mr-2" />
+                  Assinatura Digital
+                </h4>
+
+                {!signatureData ? (
+                  <div className="text-center">
+                    <p className="text-gray-600 mb-4">
+                      Para finalizar sua adesão, é necessário desenhar sua
+                      assinatura digital.
+                    </p>
+                    <Button
+                      onClick={() => setShowSignaturePad(true)}
+                      className="bg-blue-600 hover:bg-blue-700"
+                    >
+                      <Edit3 className="w-4 h-4 mr-2" />
+                      Desenhar Assinatura
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <p className="text-green-600 font-semibold mb-4">
+                      ✅ Assinatura capturada com sucesso!
+                    </p>
+                    <div className="bg-white border rounded-lg p-4 inline-block mb-4">
+                      <img
+                        src={signatureData}
+                        alt="Sua assinatura"
+                        className="max-w-[300px] max-h-[150px]"
+                      />
+                    </div>
+                    <div>
+                      <Button
+                        variant="outline"
+                        onClick={() => setShowSignaturePad(true)}
+                        className="mr-2"
+                      >
+                        <Edit3 className="w-4 h-4 mr-2" />
+                        Refazer Assinatura
+                      </Button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-between mt-8">
@@ -931,9 +990,14 @@ const Adesao = () => {
           </Button>
           <Button
             onClick={finalizarAdesao}
-            disabled={!termosAceitos || !informacoesCorretas || loading}
+            disabled={
+              !termosAceitos ||
+              !informacoesCorretas ||
+              !signatureData ||
+              loading
+            }
             className={
-              termosAceitos && informacoesCorretas
+              termosAceitos && informacoesCorretas && signatureData
                 ? "bg-green-600 hover:bg-green-700"
                 : ""
             }
@@ -1114,6 +1178,26 @@ const Adesao = () => {
           onTryDifferentData={handleTryDifferentData}
           onContinueWithExisting={handleContinueWithExisting}
         />
+      )}
+
+      {/* Modal de Assinatura Digital */}
+      {showSignaturePad && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-lg w-full">
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-4 text-center">
+                Desenhe sua assinatura digital
+              </h3>
+              <p className="text-gray-600 text-center mb-4">
+                Use o mouse ou toque na tela para desenhar sua assinatura
+              </p>
+              <SignatureCanvas
+                onSave={handleSignatureSave}
+                onCancel={handleSignatureCancel}
+              />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

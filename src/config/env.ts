@@ -5,9 +5,8 @@ const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
 
 // URLs base por ambiente
-const PRODUCTION_API_URL =
-  "https://plano-de-saude-servidores-publicos.onrender.com";
-const DEVELOPMENT_API_URL = "http://localhost:5000";
+const PRODUCTION_API_URL = "https://seu-backend-da-sinvest.onrender.com"; // Substitua pela URL real do seu deploy
+const DEVELOPMENT_API_URL = "http://localhost:5000"; // Porta correta do backend (5000)
 
 // Configurações
 const config = {
@@ -20,8 +19,8 @@ const config = {
 
   // Frontend
   FRONTEND_URL: isProduction
-    ? "https://plano-de-saude-servidores-publicos.vercel.app"
-    : "http://localhost:8080",
+    ? "https://seu-dominio-sinvest.vercel.app" // Substitua pela URL real do seu frontend
+    : "http://localhost:8081", // Porta correta do frontend
 };
 
 export default config;
