@@ -17,7 +17,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logoSinvest} alt="SINVEST Logo" className="w-12 h-6" />
+            <img src={logoSinvest} alt="SINVEST Logo" className="w-20 h-6" />
             <span className="text-lg sm:text-xl text-gray-800 font-bold">
               Plano Brasil Saúde para Associados da SINVEST
             </span>
