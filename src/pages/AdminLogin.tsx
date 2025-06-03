@@ -13,8 +13,15 @@ import {
   Grid,
   Alert,
   AlertTitle,
+  Chip,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+
+// Credenciais mockadas para demo
+const MOCK_CREDENTIALS = {
+  username: "admin",
+  password: "123456",
+};
 
 const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
@@ -30,6 +37,7 @@ const AdminLogin: React.FC = () => {
   });
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [mockMode, setMockMode] = useState<boolean>(false);
 
   // Redirecionar para admin se já estiver autenticado
   useEffect(() => {
@@ -40,6 +48,15 @@ const AdminLogin: React.FC = () => {
     }
   }, [isAuthenticated, authLoading, navigate]);
 
+  // Verificar se há token mock salvo
+  useEffect(() => {
+    const mockToken = localStorage.getItem("mock_admin_token");
+    if (mockToken === "mock_authenticated") {
+      console.log("Token mock encontrado, redirecionando para /admin");
+      navigate("/admin", { replace: true });
+    }
+  }, [navigate]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -48,10 +65,43 @@ const AdminLogin: React.FC = () => {
     }));
   };
 
+  const handleMockLogin = () => {
+    if (
+      formData.username === MOCK_CREDENTIALS.username &&
+      formData.password === MOCK_CREDENTIALS.password
+    ) {
+      // Salvar token mock
+      localStorage.setItem("mock_admin_token", "mock_authenticated");
+      localStorage.setItem(
+        "mock_admin_user",
+        JSON.stringify({
+          id: "mock_admin_1",
+          username: "admin",
+          email: "admin@sinvest.com.br",
+          role: "admin",
+        })
+      );
+
+      console.log("Login mock bem-sucedido, redirecionando...");
+      navigate("/admin", { replace: true });
+    } else {
+      setError("Credenciais inválidas. Use: admin / 123456");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    // Se estiver em modo mock, usar login mock
+    if (mockMode) {
+      setTimeout(() => {
+        handleMockLogin();
+        setLoading(false);
+      }, 500); // Simular delay de rede
+      return;
+    }
 
     try {
       const success = await login(formData);
@@ -71,6 +121,14 @@ const AdminLogin: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const fillMockCredentials = () => {
+    setFormData({
+      username: MOCK_CREDENTIALS.username,
+      password: MOCK_CREDENTIALS.password,
+    });
+    setMockMode(true);
   };
 
   const goToRegister = () => {
@@ -113,6 +171,34 @@ const AdminLogin: React.FC = () => {
           </Typography>
         </Box>
 
+        {/* Modo Demo */}
+        <Box sx={{ width: "100%", mb: 2 }}>
+          <Alert severity="info" sx={{ mb: 2 }}>
+            <AlertTitle>Modo Demo</AlertTitle>
+            Para acessar o painel administrativo em modo demonstração, clique no
+            botão abaixo:
+          </Alert>
+
+          <Button
+            fullWidth
+            variant="outlined"
+            color="info"
+            onClick={fillMockCredentials}
+            sx={{ mb: 2 }}
+          >
+            🎯 Usar Credenciais de Demo
+          </Button>
+
+          {mockMode && (
+            <Chip
+              label="Modo Demo Ativado"
+              color="success"
+              size="small"
+              sx={{ mb: 1 }}
+            />
+          )}
+        </Box>
+
         {error && (
           <Alert severity="error" sx={{ width: "100%", mb: 2 }}>
             <AlertTitle>Erro</AlertTitle>
@@ -153,9 +239,20 @@ const AdminLogin: React.FC = () => {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
             disabled={loading}
+            color={mockMode ? "success" : "primary"}
           >
-            {loading ? "Entrando..." : "Entrar"}
+            {loading ? "Entrando..." : mockMode ? "Entrar (Demo)" : "Entrar"}
           </Button>
+
+          {mockMode && (
+            <Typography
+              variant="caption"
+              color="success.main"
+              sx={{ display: "block", textAlign: "center", mb: 2 }}
+            >
+              Credenciais: admin / 123456
+            </Typography>
+          )}
 
           <Grid container>
             <Grid sx={{ flexGrow: 1 }}>
