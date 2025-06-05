@@ -12,7 +12,7 @@ const CTASection = () => {
 
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
             Não perca tempo! Faça sua adesão agora e tenha acesso imediato ao
-            melhor plano de saúde para associados do SINVEST.
+            melhor plano de saúde para você e sua família.
           </p>
 
           <Link to="/adesao">

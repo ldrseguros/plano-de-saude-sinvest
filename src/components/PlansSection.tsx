@@ -6,8 +6,9 @@ const PlansSection = () => {
   const plans = [
     {
       name: "Plano Enfermaria",
-      price: "143",
+      price: "145",
       period: "/mês",
+      taxaDeAngariacao: "É cobrado taxa de angariação!",
       description:
         "Valor acessível e ideal para quem busca economia com qualidade.",
       features: [
@@ -24,6 +25,7 @@ const PlansSection = () => {
       price: "187",
       period: "/mês",
       popular: true,
+      taxaDeAngariacao: "É cobrado taxa de angariação!",
       description: "Mais conforto e privacidade. Atendimento com excelência.",
       features: [
         "Consultas médicas ilimitadas",
@@ -39,6 +41,7 @@ const PlansSection = () => {
   const odontologico = {
     name: "Plano Odontológico",
     price: "19,90",
+    taxaDeAngariacao: "É cobrado taxa de angariação!",
     description: "Adicional para cuidado completo com sua saúde bucal",
     features: [
       "Consultas odontológicas",
@@ -97,6 +100,9 @@ const PlansSection = () => {
                       {plan.period}
                     </span>
                   </div>
+                  <p className=" text-blue-600 font-bold px-4 py-2 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed">
+                    {plan.taxaDeAngariacao}
+                  </p>
                 </div>
 
                 <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
@@ -145,6 +151,9 @@ const PlansSection = () => {
                     /mês por pessoa
                   </span>
                 </div>
+                <p className="text-blue-600 font-bold px-4 py-2 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed">
+                  {odontologico.taxaDeAngariacao}
+                </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -173,7 +182,7 @@ const PlansSection = () => {
         <div className="text-center">
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
             Valores sujeitos a alteração de acordo com a faixa etária e região
-            de cobertura. Planos especiais para empresas filiadas à SINVEST.
+            de cobertura. Planos especiais para empresas e colaboradores.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/adesao">

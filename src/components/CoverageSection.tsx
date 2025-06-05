@@ -7,7 +7,6 @@ const CoverageSection = () => {
       icon: AlertCircle,
       title: "Urgência e Emergência",
       percentage: "20%",
-      description: "Exceto internação e cirurgias",
       detail:
         "Média de R$70,00 a R$80,00 (Mediante histórico dos usuários) e tomografia/Ressonância - Média R$70,00 a R$80,00",
     },

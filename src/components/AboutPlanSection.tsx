@@ -11,8 +11,8 @@ const AboutPlanSection = () => {
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
               O Brasil Saúde oferece o melhor em assistência médica para
-              empresas filiadas à SINVEST e seus colaboradores. Com uma rede
-              credenciada de qualidade e atendimento personalizado.
+              empresas e seus colaboradores. Com uma rede credenciada de
+              qualidade e atendimento personalizado.
             </p>
 
             <div className="space-y-4 mb-8">

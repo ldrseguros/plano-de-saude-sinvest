@@ -57,7 +57,7 @@ const SobreNos = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              Sobre a Brasil Saúde SINVEST
+              Sobre a Brasil Saúde
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 leading-relaxed">
               Há mais de 15 anos cuidando da saúde de empresas e colaboradores
@@ -105,7 +105,7 @@ const SobreNos = () => {
                     Desde então, temos crescido constantemente, sempre mantendo
                     nosso foco na excelência do atendimento e na satisfação de
                     nossos beneficiários. Nossa trajetória é marcada pela
-                    confiança depositada pelas empresas filiadas à SINVEST que
+                    confiança depositada pelas empresas e colaboradores que
                     escolheram nossos serviços.
                   </p>
                   <p>
@@ -180,9 +180,9 @@ const SobreNos = () => {
                 </h3>
                 <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
                   Oferecer planos de saúde de qualidade superior, especialmente
-                  desenvolvidos para empresas filiadas à SINVEST, garantindo
-                  acesso a cuidados médicos de excelência com atendimento
-                  humanizado e preços acessíveis.
+                  desenvolvidos para empresas e colaboradores, garantindo acesso
+                  a cuidados médicos de excelência com atendimento humanizado e
+                  preços acessíveis.
                 </p>
               </div>
 
@@ -211,8 +211,8 @@ const SobreNos = () => {
                 Nossos Diferenciais
               </h2>
               <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
-                O que nos torna únicos no cuidado com a saúde das empresas
-                filiadas à SINVEST.
+                O que nos torna únicos no cuidado com a saúde das empresas e
+                colaboradores.
               </p>
             </div>
 
@@ -243,12 +243,12 @@ const SobreNos = () => {
               Nossa Sede
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 mb-8">
-              Estamos localizados em Goiânia, Goiás, atendendo empresas filiadas
-              à SINVEST da região com dedicação e proximidade.
+              Estamos localizados em Goiânia, Goiás, atendendo empresas e
+              colaboradores com dedicação e proximidade.
             </p>
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
               <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
-                Brasil Saúde SINVEST
+                Brasil Saúde
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
                 Goiânia - Goiás

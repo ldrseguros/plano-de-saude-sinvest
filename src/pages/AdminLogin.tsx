@@ -178,7 +178,7 @@ const AdminLogin: React.FC = () => {
 
       <Box mt={4} textAlign="center">
         <Typography variant="body2" color="text.secondary">
-          Brasil Saúde SINVEST © {new Date().getFullYear()}
+          Brasil Saúde © {new Date().getFullYear()}
         </Typography>
       </Box>
     </Container>

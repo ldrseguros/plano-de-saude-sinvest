@@ -21,19 +21,15 @@ const HeroSection = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               Plano Brasil Saúde
               <br />
-              para Associados do
+              <span className="text-yellow-400">para colaboradores</span>
               <br />
-              <span className="text-yellow-400">SINVEST</span>
             </h1>
 
             <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              A Aureum traz uma proposta exclusiva para os empresários e
-              colaboradores do SINVEST. Nosso compromisso é oferecer acesso
-              qualificado à saúde para o setor das indústrias e serviços,
-              garantindo planos acessíveis, ampla rede de atendimento e suporte
-              especializado. Esta proposta visa estruturar um modelo sustentável
-              de saúde corporativa, beneficiando as empresas filiadas e
-              fortalecendo a segurança e o bem-estar de seus colaboradores.
+              A Aureum traz uma proposta exclusiva para os seus colaboradores.
+              Nosso compromisso é oferecer acesso qualificado à saúde para o
+              setor das indústrias, comércio e serviços, garantindo planos
+              acessíveis, ampla rede de atendimento e suporte especializado.
             </p>
 
             <Link to="/adesao">

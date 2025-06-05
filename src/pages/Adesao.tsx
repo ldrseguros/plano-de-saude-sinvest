@@ -851,18 +851,15 @@ const Adesao = () => {
           <h3 className="text-lg font-bold mb-4">
             TERMO DE COMPROMISSO E ADESÃO
           </h3>
-          <h4 className="font-bold mb-2">
-            PLANO BRASIL SAÚDE PARA ASSOCIADOS DO SINVEST
-          </h4>
+          <h4 className="font-bold mb-2">PLANO BRASIL SAÚDE</h4>
 
           <div className="space-y-4 text-sm">
             <div>
               <h5 className="font-bold">1. OBJETO DO CONTRATO</h5>
               <p>
                 O presente termo estabelece as condições para adesão ao Plano
-                Brasil Saúde destinado exclusivamente às empresas filiadas ao
-                Sindicato das Indústrias de Vestuário no Estado de Goiás
-                (SINVEST) e seus colaboradores.
+                Brasil Saúde destinado exclusivamente às empresas e seus
+                colaboradores.
               </p>
             </div>
 

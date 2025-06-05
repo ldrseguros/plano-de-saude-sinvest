@@ -6,7 +6,6 @@ const AboutSection = () => {
   const features = [
     "Missão de oferecer saúde de qualidade para empresas e colaboradores",
     "Rede credenciada com hospitais e clínicas de referência",
-    "Vantagens exclusivas para empresas filiadas à SINVEST",
     "Estrutura sólida e confiabilidade comprovada",
   ];
 
@@ -32,8 +31,8 @@ const AboutSection = () => {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               A Brasil Saúde é uma operadora comprometida em oferecer
               assistência médica de qualidade para empresas e colaboradores.
-              Nossa estrutura foi desenvolvida pensando nas necessidades
-              específicas das empresas filiadas à SINVEST.
+              Nossa estrutura foi desenvolvida pensando em oferecer acesso a
+              assistência médica de qualidade.
             </p>
 
             <ul className="space-y-4 mb-8">

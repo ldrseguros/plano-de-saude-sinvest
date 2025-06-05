@@ -45,7 +45,7 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Benefícios para Empresas Filiadas à SINVEST
+            Benefícios para Empresas e Colaboradores
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Vantagens exclusivas pensadas para fortalecer o setor de vestuário e

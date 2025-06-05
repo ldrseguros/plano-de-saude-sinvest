@@ -18,14 +18,12 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
-              <span className="font-semibold text-lg">
-                Brasil Saúde SINVEST
-              </span>
+              <span className="font-semibold text-lg">Brasil Saúde</span>
             </Link>
             <p className="text-blue-200 text-sm sm:text-base leading-relaxed">
-              Plano de saúde exclusivo para empresas filiadas à SINVEST,
-              oferecendo cobertura completa e atendimento de qualidade para
-              colaboradores e suas famílias.
+              Plano de saúde exclusivo para empresas, oferecendo cobertura
+              completa e atendimento de qualidade para colaboradores e suas
+              famílias.
             </p>
           </div>
 
