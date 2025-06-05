@@ -852,7 +852,7 @@ const Adesao = () => {
             TERMO DE COMPROMISSO E ADESÃO
           </h3>
           <h4 className="font-bold mb-2">
-            PLANO BRASIL SAÚDE PARA ASSOCIADOS DA SINVEST
+            PLANO BRASIL SAÚDE PARA ASSOCIADOS DO SINVEST
           </h4>
 
           <div className="space-y-4 text-sm">

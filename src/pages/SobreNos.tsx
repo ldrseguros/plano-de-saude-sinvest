@@ -27,7 +27,7 @@ const SobreNos = () => {
       icon: <Users className="w-8 h-8 text-blue-600" />,
       title: "Compromisso",
       description:
-        "Nosso compromisso é com a saúde dos associados da SINVEST e suas famílias, sempre.",
+        "Nosso compromisso é com a saúde dos associados do SINVEST e suas famílias, sempre.",
     },
     {
       icon: <Award className="w-8 h-8 text-blue-600" />,

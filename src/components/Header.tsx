@@ -19,7 +19,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img src={logoSinvest} alt="SINVEST Logo" className="w-20 h-6" />
             <span className="text-lg sm:text-xl text-gray-800 font-bold">
-              Plano Brasil Saúde para Associados da SINVEST
+              Plano Brasil Saúde para Associados do SINVEST
             </span>
           </Link>
 

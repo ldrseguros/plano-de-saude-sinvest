@@ -43,7 +43,7 @@ const PlansSection = () => {
     features: [
       "Consultas odontológicas",
       "Limpeza e profilaxia",
-      "Restaurações básicas",
+      "Restaurações",
       "Urgência odontológica",
     ],
   };
