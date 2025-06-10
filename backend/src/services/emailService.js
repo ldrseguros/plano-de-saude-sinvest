@@ -100,7 +100,7 @@ const gerarHtmlEmail = (adesaoData) => {
                 ${
                   adesaoData.dadosPlano.odontologico
                     ? `
-                  <p style="color: #4caf50; font-weight: bold;">✓ Inclui cobertura odontológica (+R$ 25,00 por pessoa)</p>
+                  <p style="color: #4caf50; font-weight: bold;">✓ Inclui cobertura odontológica (+R$ 19,90 por pessoa)</p>
                 `
                     : `
                   <p style="color: #ff9800;">❌ Sem cobertura odontológica</p>

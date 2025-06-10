@@ -1,12 +1,24 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Shield, Users, Heart, Award, Clock, MapPin } from "lucide-react";
+import {
+  Shield,
+  Users,
+  Heart,
+  Award,
+  Clock,
+  MapPin,
+  Building2,
+  Phone,
+  Mail,
+  TrendingUp,
+  Globe,
+} from "lucide-react";
 
 const SobreNos = () => {
   const stats = [
-    { number: "15+", label: "Anos de experiência" },
-    { number: "10.000+", label: "Vidas cobertas" },
-    { number: "50+", label: "Hospitais credenciados" },
+    { number: "4+", label: "Anos de atuação" },
+    { number: "40.000+", label: "Vidas cobertas" },
+    { number: "5", label: "Estados de atuação" },
     { number: "24/7", label: "Atendimento disponível" },
   ];
 
@@ -15,38 +27,50 @@ const SobreNos = () => {
       icon: <Shield className="w-8 h-8 text-blue-600" />,
       title: "Segurança",
       description:
-        "Garantimos a proteção e segurança de todos os nossos beneficiários com planos regulamentados pela ANS.",
+        "Operadora regulamentada pela ANS, oferecendo segurança e proteção a todos os nossos beneficiários com planos de saúde confiáveis.",
     },
     {
       icon: <Heart className="w-8 h-8 text-blue-600" />,
-      title: "Cuidado",
+      title: "Atenção Primária",
       description:
-        "Oferecemos atendimento humanizado e personalizado, priorizando o bem-estar de cada pessoa.",
+        "Foco em Atenção Primária à Saúde, proporcionando atendimento humanizado e personalizado com modelo mais sustentável.",
     },
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
       title: "Compromisso",
       description:
-        "Nosso compromisso é com a saúde dos associados do SINVEST e suas famílias, sempre.",
+        "Compromisso com a saúde corporativa, oferecendo soluções especializadas para empresas e seus colaboradores.",
     },
     {
       icon: <Award className="w-8 h-8 text-blue-600" />,
-      title: "Excelência",
+      title: "Inovação",
       description:
-        "Buscamos constantemente a excelência em nossos serviços e na qualidade do atendimento.",
+        "Healthtech inovadora que combina tecnologia e cuidado humanizado, oferecendo telemedicina e soluções digitais.",
     },
   ];
 
   const differentials = [
-    "Planos exclusivos para empresas filiadas à SINVEST",
-    "Soluções corporativas personalizadas",
-    "Sem período de carência para consultas e exames",
-    "Rede credenciada com mais de 50 hospitais e clínicas",
-    "Cobertura nacional com foco regional",
-    "Atendimento 24 horas para urgência e emergência",
-    "Programas de prevenção e promoção da saúde",
-    "Telemedicina disponível",
+    "Modelo de Atenção Primária à Saúde inovador",
+    "Redução de custos para operadoras e melhor custo-benefício",
+    "Médico da família altamente capacitado para acompanhamento integral",
+    "Telemedicina integrada com atendimento presencial",
+    "Encaminhamentos especializados apenas quando necessário",
+    "Mensalidades acessíveis com qualidade de atendimento",
+    "Crescimento de 104% em faturamento (2023)",
+    "Expansão geográfica em andamento",
+    "Foco em sustentabilidade financeira para empresas",
+    "Diminuição de desperdícios e otimização de recursos",
   ];
+
+  const coverage = [
+    "Bahia (sede principal)",
+    "Rio Grande do Norte",
+    "Goiás",
+    "Pernambuco",
+    "Sergipe",
+  ];
+
+  const expansion = ["Alagoas", "Distrito Federal", "Minas Gerais", "Paraíba"];
 
   return (
     <div className="min-h-screen bg-white">
@@ -57,12 +81,23 @@ const SobreNos = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              Sobre a Brasil Saúde
+              Sobre o Plano Brasil Saúde
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 leading-relaxed">
-              Há mais de 15 anos cuidando da saúde de empresas e colaboradores
-              do setor de vestuário com dedicação, qualidade e compromisso.
+              Healthtech especializada em saúde corporativa com 4 anos de
+              atuação no mercado, atendendo mais de 40 mil vidas com foco em
+              Atenção Primária à Saúde.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center text-blue-100">
+              <div className="flex items-center gap-2">
+                <Building2 className="w-5 h-5" />
+                <span>Fundada em 2019</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5" />
+                <span>Crescimento 104% em 2023</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -96,22 +131,31 @@ const SobreNos = () => {
                 </h2>
                 <div className="space-y-4 sm:space-y-6 text-gray-600 text-sm sm:text-base leading-relaxed">
                   <p>
-                    A Brasil Saúde SINVEST nasceu em 2008 com o objetivo de
-                    oferecer planos de saúde de qualidade especificamente
-                    desenvolvidos para atender às necessidades das empresas do
-                    setor de vestuário e seus colaboradores.
+                    O Plano Brasil Saúde foi criado em 2019 como uma healthtech
+                    inovadora especializada em serviços de saúde corporativa. Em
+                    apenas 4 anos de atuação, conquistamos a confiança de mais
+                    de 40 mil vidas nos planos médico-hospitalar e odontológico.
                   </p>
                   <p>
-                    Desde então, temos crescido constantemente, sempre mantendo
-                    nosso foco na excelência do atendimento e na satisfação de
-                    nossos beneficiários. Nossa trajetória é marcada pela
-                    confiança depositada pelas empresas e colaboradores que
-                    escolheram nossos serviços.
+                    Nossa empresa nasceu com o propósito de revolucionar o
+                    modelo de saúde suplementar tradicional, focando na Atenção
+                    Primária à Saúde. Este modelo mais enxuto e saudável
+                    financeiramente oferece às empresas uma alternativa aos
+                    custos exorbitantes dos planos tradicionais, sem abrir mão
+                    da qualidade e humanização no atendimento.
                   </p>
                   <p>
-                    Hoje, somos referência em planos de saúde corporativa para o
-                    setor de vestuário, oferecendo cobertura completa com a
-                    qualidade e segurança que nossos beneficiários merecem.
+                    Em 2023, registramos um crescimento expressivo de 104% no
+                    faturamento, fechando o ano com mais de R$ 24 milhões em
+                    receitas. Nossa projeção para 2024 é ambiciosa: alcançar R$
+                    120 milhões, consolidando nossa posição como referência em
+                    saúde corporativa inovadora.
+                  </p>
+                  <p>
+                    Atualmente, nossa atuação abrange 5 estados brasileiros, e
+                    já iniciamos estudos para expansão geográfica, demonstrando
+                    a solidez e o potencial de crescimento de nosso modelo de
+                    negócio.
                   </p>
                 </div>
               </div>
@@ -119,13 +163,16 @@ const SobreNos = () => {
                 <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-6 sm:p-8">
                   <div className="flex items-center justify-center h-48 sm:h-64 lg:h-80">
                     <div className="text-center">
-                      <Clock className="w-16 h-16 sm:w-20 sm:h-20 text-blue-600 mx-auto mb-4" />
+                      <Globe className="w-16 h-16 sm:w-20 sm:h-20 text-blue-600 mx-auto mb-4" />
                       <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-2">
-                        15+ Anos
+                        Healthtech Inovadora
                       </h3>
                       <p className="text-blue-700 text-sm sm:text-base">
-                        Cuidando da sua saúde
+                        Tecnologia + Cuidado Humanizado
                       </p>
+                      <div className="mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg text-sm">
+                        Fundada em 2019
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -144,8 +191,8 @@ const SobreNos = () => {
                 Nossos Valores
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Os princípios que guiam nossa atuação e definem nosso
-                compromisso com a excelência em saúde.
+                Os princípios que guiam nossa atuação como healthtech
+                especializada em Atenção Primária à Saúde corporativa.
               </p>
             </div>
 
@@ -153,7 +200,7 @@ const SobreNos = () => {
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-center"
+                  className="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex justify-center mb-4">{value.icon}</div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3">
@@ -179,10 +226,11 @@ const SobreNos = () => {
                   Nossa Missão
                 </h3>
                 <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
-                  Oferecer planos de saúde de qualidade superior, especialmente
-                  desenvolvidos para empresas e colaboradores, garantindo acesso
-                  a cuidados médicos de excelência com atendimento humanizado e
-                  preços acessíveis.
+                  Revolucionar o modelo de saúde suplementar através da Atenção
+                  Primária à Saúde, oferecendo soluções tecnológicas e
+                  humanizadas para empresas, com foco na sustentabilidade
+                  financeira, redução de desperdícios e experiência
+                  personalizada para cada beneficiário.
                 </p>
               </div>
 
@@ -191,11 +239,66 @@ const SobreNos = () => {
                   Nossa Visão
                 </h3>
                 <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
-                  Ser a operadora de saúde de referência para empresas do setor
-                  de vestuário no Brasil, reconhecida pela excelência em
-                  atendimento, inovação em serviços e compromisso com o
-                  bem-estar de nossos beneficiários.
+                  Ser a healthtech líder em saúde corporativa no Brasil,
+                  reconhecida pela excelência em Atenção Primária, inovação
+                  tecnológica e modelo sustentável que beneficia empresas,
+                  colaboradores e o sistema de saúde como um todo.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Abrangência Geográfica */}
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                Nossa Abrangência
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Presente em 5 estados brasileiros e em expansão para novos
+                mercados.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-6 flex items-center gap-2">
+                  <MapPin className="w-6 h-6 text-blue-600" />
+                  Estados de Atuação Atual
+                </h3>
+                <div className="grid gap-3">
+                  {coverage.map((state, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg"
+                    >
+                      <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                      <span className="font-medium text-gray-800">{state}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-green-800 mb-6 flex items-center gap-2">
+                  <Globe className="w-6 h-6 text-green-600" />
+                  Expansão Planejada para 2024
+                </h3>
+                <div className="grid gap-3">
+                  {expansion.map((state, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-3 bg-green-50 rounded-lg"
+                    >
+                      <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                      <span className="font-medium text-gray-800">{state}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -211,8 +314,8 @@ const SobreNos = () => {
                 Nossos Diferenciais
               </h2>
               <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
-                O que nos torna únicos no cuidado com a saúde das empresas e
-                colaboradores.
+                O que nos torna únicos como healthtech especializada em Atenção
+                Primária à Saúde corporativa.
               </p>
             </div>
 
@@ -232,33 +335,84 @@ const SobreNos = () => {
         </div>
       </section>
 
-      {/* Localização */}
+      {/* Localização e Contato */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <MapPin className="w-12 h-12 text-blue-600" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Nossa Sede
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8">
-              Estamos localizados em Goiânia, Goiás, atendendo empresas e
-              colaboradores com dedicação e proximidade.
-            </p>
-            <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
-                Brasil Saúde
-              </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Goiânia - Goiás
-                <br />
-                Atendimento: Segunda a Sexta, 8h às 18h
-                <br />
-                Telefone: (64) 3131-0000
-                <br />
-                WhatsApp: (64) 99999-9999
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="flex justify-center mb-6">
+                <Building2 className="w-12 h-12 text-blue-600" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                Nossa Sede Principal
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 mb-8">
+                Localizada na Bahia, nossa sede centraliza as operações que
+                atendem a 5 estados brasileiros, com expansão em andamento.
               </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                  <Building2 className="w-6 h-6 text-blue-600" />
+                  Plano Brasil Saúde
+                </h3>
+                <div className="space-y-4 text-gray-600">
+                  <p className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>
+                      Bahia - Brasil
+                      <br />
+                      Healthtech em Saúde Corporativa
+                      <br />
+                      Especializada em Atenção Primária
+                    </span>
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                    <span>0800 971 9777</span>
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <Globe className="w-5 h-5 text-blue-600" />
+                    <span>planobrasilsaude.com.br</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-6">
+                  Crescimento e Resultados
+                </h3>
+                <div className="space-y-4 text-gray-600">
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span className="font-medium">Crescimento 2023:</span>
+                    <span className="text-green-600 font-bold">+104%</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                    <span className="font-medium">Faturamento 2023:</span>
+                    <span className="text-blue-600 font-bold">R$ 24M+</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                    <span className="font-medium">Meta 2024:</span>
+                    <span className="text-purple-600 font-bold">R$ 120M</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                    <span className="font-medium">Vidas Cobertas:</span>
+                    <span className="text-orange-600 font-bold">40.000+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <div className="bg-blue-600 text-white rounded-xl p-6 inline-block">
+                <h4 className="font-bold mb-2">Healthtech Inovadora</h4>
+                <p className="text-2xl font-bold">4 Anos de Atuação</p>
+                <p className="text-sm text-blue-100 mt-2">
+                  Especializada em Atenção Primária à Saúde Corporativa
+                </p>
+              </div>
             </div>
           </div>
         </div>

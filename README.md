@@ -70,25 +70,28 @@ O Brasil Saúde Servidor é uma plataforma web moderna e responsiva que oferece 
 
 ## 📊 Planos Disponíveis
 
-### 🏥 Plano Enfermaria - R$ 169/mês
+### 🏥 Plano Enfermaria - R$ 143/mês
 
-- Consultas médicas ilimitadas
-- Exames laboratoriais e de imagem
-- Internação em enfermaria
-- Urgência e emergência 24h
-- Cirurgias eletivas e de urgência
-- Fisioterapia e reabilitação
-- Telemedicina incluída
+- ✅ Consultas médicas ilimitadas
+- ✅ Exames laboratoriais e de imagem
+- ✅ Internação em enfermaria
+- ✅ Urgência e emergência 24h
+- ✅ Cirurgias eletivas e de urgência
+- ✅ Fisioterapia e reabilitação
+- ✅ Psicologia e psiquiatria
+- ✅ Cardiologia e neurologia
+- ✅ Pediatria e ginecologia
+- ✅ Telemedicina incluída
 
-### 🏨 Plano Apartamento - R$ 211/mês (MAIS POPULAR)
+### 🏨 Plano Apartamento - R$ 187/mês (MAIS POPULAR)
 
-- Todos os benefícios do Plano Enfermaria
-- Internação em apartamento
-- Acompanhante em internação
-- Quarto privativo
-- Atendimento personalizado
+- ✅ **Todos os benefícios do Plano Enfermaria**
+- ✅ Internação em apartamento
+- ✅ Acompanhante em internação
+- ✅ Quarto privativo
+- ✅ Maior conforto e privacidade
 
-### 🦷 Plano Odontológico - +R$ 25/mês
+### 🦷 Plano Odontológico - +R$ 19,90/mês
 
 - Consultas odontológicas ilimitadas
 - Limpeza e profilaxia

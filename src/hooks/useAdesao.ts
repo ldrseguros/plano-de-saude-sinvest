@@ -161,13 +161,13 @@ export const useAdesao = () => {
 
   const calcularValorTotal = () => {
     const planos = [
-      { id: "enfermaria", preco: 169 },
-      { id: "apartamento", preco: 211 },
+      { id: "enfermaria", preco: 143 },
+      { id: "apartamento", preco: 187 },
     ];
 
     const plano = planos.find((p) => p.id === state.planoSelecionado);
     const valorPlano = plano ? plano.preco : 0;
-    const valorOdonto = state.odontologico ? 25 : 0;
+    const valorOdonto = state.odontologico ? 19.9 : 0;
     const valorDependentes =
       state.dependentes.length * (valorPlano + valorOdonto);
     return valorPlano + valorOdonto + valorDependentes;

@@ -63,9 +63,9 @@ const extrairDadosPlano = (usuario) => {
   try {
     // Mapeamento dos tipos de plano
     const planosInfo = {
-      WARD: { nome: "Plano Enfermaria", preco: 169 },
-      PRIVATE_ROOM: { nome: "Plano Apartamento", preco: 211 },
-      DENTAL: { nome: "Plano Odontológico", preco: 25 },
+      WARD: { nome: "Plano Enfermaria", preco: 143 },
+      PRIVATE_ROOM: { nome: "Plano Apartamento", preco: 187 },
+      DENTAL: { nome: "Plano Odontológico", preco: 19.9 },
     };
 
     const planoInfo = planosInfo[usuario.planType] || planosInfo.WARD;
@@ -74,7 +74,7 @@ const extrairDadosPlano = (usuario) => {
 
     // Calcular valores
     const valorPlano = planoInfo.preco;
-    const valorOdonto = odontologico ? 25 : 0;
+    const valorOdonto = odontologico ? 19.9 : 0;
     const valorTitular = valorPlano + valorOdonto;
     const valorDependentes = quantidadeDependentes * valorTitular;
     const valorTotal = valorTitular + valorDependentes;

@@ -160,8 +160,10 @@ export const usePdfGenerator = () => {
         data.planoSelecionado === "apartamento"
           ? "Plano Apartamento"
           : "Plano Enfermaria";
+
+      // Valores corretos conforme definidos na aplicação
       const planoValor =
-        data.planoSelecionado === "apartamento" ? "R$ 211,00" : "R$ 169,00";
+        data.planoSelecionado === "apartamento" ? "R$ 187,00" : "R$ 143,00";
 
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(12);
@@ -185,7 +187,7 @@ export const usePdfGenerator = () => {
       pdf.text("Odontológico:", 20, yPosition);
       pdf.setFont("helvetica", "normal");
       const odontoText = data.odontologico
-        ? "Sim (+R$ 25,00/mês)"
+        ? "Sim (+R$ 19,90/mês)"
         : "Não incluído";
       pdf.text(odontoText, 60, yPosition);
 
