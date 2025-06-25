@@ -31,8 +31,9 @@ import { useAdesao } from "@/hooks/useAdesao";
 import { usePdfGenerator } from "@/hooks/usePdfGenerator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import UserExistsModal from "@/components/UserExistsModal";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { API_BASE_URL } from "@/services/api";
+import { validateCPF, applyCPFMask } from "@/utils/validators";
 
 const Adesao = () => {
   const {
@@ -71,7 +72,47 @@ const Adesao = () => {
     setError,
   } = useAdesao();
 
+  const [cpfErrors, setCpfErrors] = useState<{ [key: string]: string }>({});
+
   const { generatePDF, isGenerating } = usePdfGenerator();
+
+  // Função para validar e formatar CPF
+  const handleCPFChange = (
+    value: string,
+    key: string,
+    isDependent: boolean = false,
+    dependentId?: string
+  ) => {
+    const maskedValue = applyCPFMask(value);
+
+    if (isDependent && dependentId) {
+      atualizarDependente(dependentId, "cpf", maskedValue);
+    } else {
+      setDadosTitular({ ...dadosTitular, cpf: maskedValue });
+    }
+
+    // Validar CPF se tiver 11 dígitos (sem formatação)
+    const cleanCPF = value.replace(/\D/g, "");
+    if (cleanCPF.length === 11) {
+      if (!validateCPF(cleanCPF)) {
+        setCpfErrors((prev) => ({ ...prev, [key]: "CPF inválido" }));
+      } else {
+        setCpfErrors((prev) => {
+          const newErrors = { ...prev };
+          delete newErrors[key];
+          return newErrors;
+        });
+      }
+    } else if (cleanCPF.length > 0) {
+      setCpfErrors((prev) => ({ ...prev, [key]: "CPF deve ter 11 dígitos" }));
+    } else {
+      setCpfErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[key];
+        return newErrors;
+      });
+    }
+  };
 
   const planos = [
     {
@@ -374,11 +415,17 @@ const Adesao = () => {
             <Input
               id="cpf"
               value={dadosTitular.cpf}
-              onChange={(e) =>
-                setDadosTitular({ ...dadosTitular, cpf: e.target.value })
-              }
+              onChange={(e) => handleCPFChange(e.target.value, "titular")}
               placeholder="000.000.000-00"
+              maxLength={14}
+              className={cpfErrors.titular ? "border-red-500" : ""}
             />
+            {cpfErrors.titular && (
+              <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                <AlertCircle className="w-4 h-4" />
+                {cpfErrors.titular}
+              </p>
+            )}
           </div>
           <div>
             <Label htmlFor="dataNascimento">Data de nascimento</Label>
@@ -517,14 +564,27 @@ const Adesao = () => {
                     <Input
                       value={dependente.cpf}
                       onChange={(e) =>
-                        atualizarDependente(
-                          dependente.id,
-                          "cpf",
-                          e.target.value
+                        handleCPFChange(
+                          e.target.value,
+                          `dependente-${dependente.id}`,
+                          true,
+                          dependente.id
                         )
                       }
                       placeholder="000.000.000-00"
+                      maxLength={14}
+                      className={
+                        cpfErrors[`dependente-${dependente.id}`]
+                          ? "border-red-500"
+                          : ""
+                      }
                     />
+                    {cpfErrors[`dependente-${dependente.id}`] && (
+                      <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {cpfErrors[`dependente-${dependente.id}`]}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <Label>Grau de parentesco</Label>

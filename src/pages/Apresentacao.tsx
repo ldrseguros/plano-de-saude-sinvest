@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SolicitarPropostaModal from "@/components/SolicitarPropostaModal";
+import { useState } from "react";
 import {
   Shield,
   Users,
@@ -22,6 +24,11 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Apresentacao = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   const benefits = [
     {
       icon: <DollarSign className="w-8 h-8 text-blue-600" />,
@@ -30,14 +37,13 @@ const Apresentacao = () => {
     },
     {
       icon: <Hospital className="w-8 h-8 text-blue-600" />,
-      title: "Rede credenciada nacional",
-      description: "Rede credenciada nacional com foco em Goiás",
+      title: "Rede de atendimento mista",
+      description: "Rede própria + rede credenciada",
     },
     {
       icon: <Shield className="w-8 h-8 text-blue-600" />,
-      title: "Redução de carência",
-      description:
-        "Isenção ou redução de carência conforme regras da operadora",
+      title: "Atração de talentos",
+      description: "Atração de talentos e redução do turnover",
     },
     {
       icon: <Heart className="w-8 h-8 text-blue-600" />,
@@ -111,6 +117,7 @@ const Apresentacao = () => {
                 <Button
                   size="lg"
                   className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold"
+                  onClick={handleOpenModal}
                 >
                   👉 Solicitar Proposta Personalizada
                 </Button>
@@ -318,6 +325,7 @@ const Apresentacao = () => {
             <Button
               size="lg"
               className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold mb-8"
+              onClick={handleOpenModal}
             >
               👉 Quero minha proposta personalizada
             </Button>
@@ -326,7 +334,7 @@ const Apresentacao = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <Phone className="w-8 h-8 mx-auto mb-3" />
                 <p className="font-bold mb-2">WhatsApp</p>
-                <p className="text-blue-100">(62) 9 9999-9999</p>
+                <p className="text-blue-100">(62) 9 9137-2617</p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
@@ -344,6 +352,9 @@ const Apresentacao = () => {
       </section>
 
       <Footer />
+
+      {/* Modal de Solicitação de Proposta */}
+      <SolicitarPropostaModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
